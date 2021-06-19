@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Сохраненные"
+            android:text="Избранное"
             android:textSize="20sp"
             android:textColor="@color/textcolorgrey"
             android:drawableStart="@drawable/ic_baseline_bookmarks_24"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:clickable="true"
-        android:id="@+id/your_Question_f2">
+        android:id="@+id/your_coin">
 
         <TextView
             android:layout_width="match_parent"

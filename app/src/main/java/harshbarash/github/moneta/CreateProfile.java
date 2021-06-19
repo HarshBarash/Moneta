@@ -160,7 +160,7 @@ public class CreateProfile extends AppCompatActivity {
                             profile.put("uid", currentUserId);
                             profile.put("privacy", "Любитель");
 
-                            member.setName(name);
+                            member.setName(name.toUpperCase());
                             member.setBio(bio);
                             member.setUid(currentUserId);
                             member.setUrl(downloadUri.toString());

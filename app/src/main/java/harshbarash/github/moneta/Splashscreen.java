@@ -32,7 +32,7 @@ public class Splashscreen extends AppCompatActivity {
         nameTv = findViewById(R.id.tv_splash_name);
 
         ObjectAnimator animatorY = ObjectAnimator.ofFloat(imageView,"y",250f);
-        ObjectAnimator animatorname = ObjectAnimator.ofFloat(nameTv,"x",225f);
+        ObjectAnimator animatorname = ObjectAnimator.ofFloat(nameTv,"x",175f);
         animatorY.setDuration(animTime);
         animatorname.setDuration(animTime);
         AnimatorSet animatorSet = new AnimatorSet();

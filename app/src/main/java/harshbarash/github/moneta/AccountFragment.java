@@ -137,7 +137,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 //                followertv.setText(Integer.toString(followerno)+" Подписчиков");
 
                 int count = followerno;
-                Resources res = getResources();
+
+                Resources res = getContext().getResources();
                 String followersFound = res.getQuantityString(R.plurals.numberOfFollower, count, count);
                 followertv.setText(followerno + " " + followersFound); //конкатанирую речь в 3 ночи;)
 

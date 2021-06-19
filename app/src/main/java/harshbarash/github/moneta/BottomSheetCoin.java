@@ -24,7 +24,7 @@ public class BottomSheetCoin extends BottomSheetDialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = getLayoutInflater().inflate(R.layout.bottomsheet_f2,null);
         cardView = view.findViewById(R.id.related_f2);
-        cardView2 = view.findViewById(R.id.your_Question_f2);
+        cardView2 = view.findViewById(R.id.your_coin);
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
