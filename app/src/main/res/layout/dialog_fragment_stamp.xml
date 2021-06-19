@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_rounded_bg"
+    android:minWidth="350dp"
+    android:minHeight="350dp"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/backspace"
+                android:layout_marginLeft="5dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/ic_baseline_keyboard_green_backspace_36"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/playfair_display_bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="-30dp"
+                android:gravity="center"
+                android:text="Штемпель"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="350dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display"
+            android:gravity="center"
+            android:text="ММД - Московский монетный двор"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_width="345dp"
+            android:layout_height="230dp"
+            android:background="@drawable/mmd"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_marginStart="5dp"
+            android:paddingTop="10dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display"
+            android:gravity="center"
+            android:text="Санкт-Петербургский Монетный Двор"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_width="345dp"
+            android:layout_height="230dp"
+            android:background="@drawable/spb"
+            android:layout_marginBottom="20dp"/>
+
+
+</LinearLayout>
+</ScrollView>

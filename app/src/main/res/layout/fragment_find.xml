@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/MoneyGreen">
+
+
+    <LinearLayout
+        android:background="@color/MoneyGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="-30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/playfair_display_bold"
+        android:text="Запросы:"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:padding="5dp"
+        android:id="@+id/requeststv" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/recylerview_requestf3"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Поиск"
+        android:layout_margin="5dp"
+        android:id="@+id/search_friend"
+        android:background="@drawable/search_back"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_grey_search_24"
+        android:paddingStart="20dp"
+        android:textColor="@android:color/black"
+        android:drawablePadding="10dp"/>
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рекомендации:"
+        android:textSize="45sp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:textColor="@color/white"
+       />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recylerview_profile"
+        android:layout_margin="10dp"/>
+
+
+</LinearLayout>

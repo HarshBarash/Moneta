@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="arrayspinner1">
+        <item>@string/__1Rubel</item>
+        <item>@string/__2Rubel</item>
+        <item>@string/__5Rubel</item>
+        <item>@string/__10Rubel</item>
+    </string-array>
+
+    <string-array name="arrayspinner2">
+        <item>@string/__1</item>
+        <item>@string/__2</item>
+        <item>@string/__3</item>
+        <item>@string/__4</item>
+        <item>@string/__5</item>
+        <item>@string/__6</item>
+        <item>@string/__7</item>
+    </string-array>
+
+    <string-array name="arrayspinner3">
+        <item>@string/__DA</item>
+        <item>@string/__NET</item>
+    </string-array>
+
+    <string-array name="arrayspinner4">
+        <item>@string/__M</item>
+        <item>@string/__SPB</item>
+    </string-array>
+
+
+    <string-array name="arrayspinner5">
+        <item>@string/__WHITE</item>
+        <item>@string/__YELLOW</item>
+        <item>@string/__OTHER</item>
+    </string-array>
+
+    <string-array name="arrayspinner6">
+        <item>@string/__OB</item>
+        <item>@string/__YB</item>
+        <item>@string/__IN</item>
+    </string-array>
+
+</resources>

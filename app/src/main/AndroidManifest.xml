@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="harshbarash.github.monetaandroid">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="harshbarash.github.moneta.FollowerActivity" />
+        <activity android:name="harshbarash.github.moneta.UpdatePhoto" />
+        <activity android:name="harshbarash.github.moneta.SendImage" />
+        <activity android:name="harshbarash.github.moneta.MessageActivity" />
+        <activity android:name="harshbarash.github.moneta.YourCoins" />
+        <activity android:name="harshbarash.github.moneta.Related" />
+        <activity android:name="harshbarash.github.moneta.RequestShow" />
+        <activity android:name="harshbarash.github.moneta.CoinsActivity" />
+        <activity android:name="harshbarash.github.moneta.ClassifierActivity"/>
+        <activity android:name="harshbarash.github.moneta.CollectionActivity" />
+        <activity android:name="harshbarash.github.moneta.DefineActivity" />
+        <activity android:name="harshbarash.github.moneta.ImageActivity" />
+        <activity android:name="harshbarash.github.moneta.PrivacyActivity" />
+        <activity android:name="harshbarash.github.moneta.UpdateProfile" />
+        <activity android:name="harshbarash.github.moneta.CreateProfile" />
+        <activity android:name="harshbarash.github.moneta.MainActivity" />
+        <activity android:name="harshbarash.github.moneta.RegisterActivity" />
+        <activity android:name="harshbarash.github.moneta.ShowUser" />
+        <activity android:name="harshbarash.github.moneta.LoginActivity" />
+        <activity android:name="harshbarash.github.moneta.Splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:authorities="harshbarash.github.moneta"
+            android:name="harshbarash.github.moneta.Provider"
+            android:exported="false"/>
+    </application>
+
+</manifest>

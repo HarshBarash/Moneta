@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/MoneyGreen"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--  TODO Раздел в разработке. В течении следующей недели будет сделан -->
+
+    <LinearLayout
+        android:background="@color/MoneyGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Фильтр:"
+        android:layout_marginTop="-30dp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:padding="5dp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvOld">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по появлению"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_bookmarks_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvNominal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по номиналу"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_bookmarks_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvYear">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по году"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvStamp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по штемпелю"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvCondition">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по состоянию"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvType">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по типу"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/tvMaterial">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Сортировать по материалу"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

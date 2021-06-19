@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/relative_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coin_back"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/__1Rubel"
+                android:layout_marginHorizontal="30dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/playfair_display"
+                android:textStyle="bold"
+                android:textSize="45sp" />
+            <!--      //декорации если надо-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="33dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="@string/year"/>
+
+                <TextView
+                    android:id="@+id/tv_year"
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_edittext"
+                    android:text="@string/_2003"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="-85dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_gravity="right"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="@string/stamp"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tv_stamp"
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:text="@string/__M"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="33dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="@string/condition"/>
+
+                <TextView
+                    android:id="@+id/tv_condition"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:text="@string/__5"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_height="45dp"
+                    android:layout_width="140dp"/>
+
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="-85dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_gravity="right"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="Тип:"/>
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:text="@string/__IN"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="33dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="@string/magnet"/>
+
+                <TextView
+                    android:id="@+id/tv_magnet"
+                    android:layout_marginStart="28dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:text="@string/__DA"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_height="45dp"
+                    android:layout_width="140dp"/>
+
+                <TextView
+                    android:layout_width="125dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="-85dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_gravity="right"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="Материал:"/>
+
+                <TextView
+                    android:id="@+id/tv_material"
+                    android:layout_marginEnd="28dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:text="Желтый металл"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:layout_height="45dp"
+                    android:layout_width="140dp"/>
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="start"
+                    android:text="Цена: 500р"
+                    android:textColor="@color/black"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="-3dp"
+                    android:gravity="start"
+                    android:text="Екатеринбург"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageButton
+                    android:layout_marginEnd="28dp"
+                    android:layout_gravity="right"
+                    android:id="@+id/delete_item_que_tv"
+                    android:layout_width="133dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="-0dp"
+                    android:background="@drawable/border_deco_round"
+                    android:src="@drawable/delete_green" />
+
+                <TextView
+                    android:id="@+id/time_que_item_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="-100dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_gravity="right"
+                    android:hint="time"
+                    android:textColor="@color/MoneyGreen"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="-205dp"
+        android:src="@drawable/rubel1"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="150dp"/>
+
+</LinearLayout>
+
+
+

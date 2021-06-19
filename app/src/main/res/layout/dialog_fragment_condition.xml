@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_rounded_bg"
+    android:minWidth="350dp"
+    android:minHeight="350dp"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/backspace"
+                android:layout_marginLeft="5dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/ic_baseline_keyboard_green_backspace_36"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/playfair_display_bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="-30dp"
+                android:gravity="center"
+                android:text="Состояние"
+                android:textColor="@color/black"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="PR - надписи нечитаемы, или  серьёзные повреждения монеты"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="G - плохое состояние, но  изображения и надписи читаются"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="VG - монета повреждена небольшой коррозией, надписи и изображения сглажены"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="F - существенный износ, но все детали видны чётко"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="VF - небольшой износ, без загрязнений и сильного налёта"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="XF - почти без следов обращения, чёткий рельеф"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="UNC - идеальная монета, возможны следы мешкового хранения"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:paddingBottom="10dp"
+        tools:ignore="RtlCompat" />
+
+
+</LinearLayout>
+</ScrollView>
