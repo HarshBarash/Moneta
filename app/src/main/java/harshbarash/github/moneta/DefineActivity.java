@@ -49,8 +49,6 @@ import android.content.Loader;
 
 import java.util.Calendar;
 
-import harshbarash.github.moneta.CoinMember;
-import harshbarash.github.moneta.Moneta;
 import harshbarash.github.monetaandroid.R;
 
 public class DefineActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, LoaderManager.LoaderCallbacks<Cursor> {
@@ -277,14 +275,14 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
 
 
                 //Если надо до секунды
-//                Calendar ctime = Calendar.getInstance();
-//                @SuppressLint("SimpleDateFormat") SimpleDateFormat currenttime = new SimpleDateFormat("HH:mm:ss");
-//                final String savetime = currenttime.format(ctime.getTime());
+                Calendar ctime = Calendar.getInstance();
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat currenttime = new SimpleDateFormat("HH:mm:ss");
+                final String savetime = currenttime.format(ctime.getTime());
 
 
-//                String time = savedate +":"+ savetime;
+                String time = savedate +":"+ savetime;
 
-                String time = savedate;
+//                String time = savedate;
 
 
 
@@ -844,6 +842,8 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             mYearEditText.setText(year_tos);
             mPriceEditText.setText(price_tos);
             mDescriptionEditText.setText(description_tos);
+            mSpinner1.setSelection(nominal);
+            mSpinner2.setSelection(condition);
 
 
 

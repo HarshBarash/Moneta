@@ -10,8 +10,6 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.time.Year;
-
 import harshbarash.github.monetaandroid.R;
 
 public class Adapter extends CursorAdapter {
@@ -44,8 +42,8 @@ public class Adapter extends CursorAdapter {
         int condition = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_CONDITION);
         int magnet = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MAGNET);
         int stamp = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_STAMP);
-        int kant = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_TYPE);
-        int gurt = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MATERIAL);
+        int type = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_TYPE);
+        int material = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MATERIAL);
         int year = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_YEAR);
         int price = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_PRICE);
         int description = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_DESCRIPTION);
@@ -54,8 +52,8 @@ public class Adapter extends CursorAdapter {
         String condition_tos = cursor.getString(condition);
         String magnet_tos = cursor.getString(magnet);
         String stamp_tos = cursor.getString(stamp);
-        String kant_tos = cursor.getString(kant);
-        String gurt_tos = cursor.getString(gurt);
+        String kant_tos = cursor.getString(type);
+        String gurt_tos = cursor.getString(material);
         String year_tos = cursor.getString(year);
         String price_tos = cursor.getString(price);
         String description_tos = cursor.getString(description);

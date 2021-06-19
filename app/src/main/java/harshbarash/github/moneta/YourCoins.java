@@ -89,7 +89,7 @@ public class YourCoins extends AppCompatActivity {
                     public Viewholder_Coin onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
                         View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.yourque_item,parent,false);
+                                .inflate(R.layout.yourcoin_item,parent,false);
 
                         return new Viewholder_Coin(view);
 

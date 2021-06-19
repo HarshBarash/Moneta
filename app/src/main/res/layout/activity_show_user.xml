@@ -195,7 +195,7 @@
                 android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
-                android:text="Отправьте запрос, это закрытый аккаунт"
+                android:text="Отправьте запрос, если это закрытый аккаунт"
                 android:textColor="@color/textcolorgrey"
                 android:textSize="15sp"
                 android:visibility="visible" />

@@ -21,7 +21,6 @@ public class Splashscreen extends AppCompatActivity {
 
     ImageView imageView;
     TextView nameTv;
-    long animTime = 50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +30,6 @@ public class Splashscreen extends AppCompatActivity {
         imageView = findViewById(R.id.iv_logo_splash);
         nameTv = findViewById(R.id.tv_splash_name);
 
-        ObjectAnimator animatorY = ObjectAnimator.ofFloat(imageView,"y",250f);
-        ObjectAnimator animatorname = ObjectAnimator.ofFloat(nameTv,"x",175f);
-        animatorY.setDuration(animTime);
-        animatorname.setDuration(animTime);
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(animatorY,animatorname);
-        animatorSet.start();
 
     }
 
@@ -59,7 +51,7 @@ public class Splashscreen extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        },1000);
+        },700);
 
     }
 }

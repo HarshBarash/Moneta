@@ -38,7 +38,8 @@
         <activity android:name="harshbarash.github.moneta.RegisterActivity" />
         <activity android:name="harshbarash.github.moneta.ShowUser" />
         <activity android:name="harshbarash.github.moneta.LoginActivity" />
-        <activity android:name="harshbarash.github.moneta.Splashscreen">
+        <activity android:name="harshbarash.github.moneta.Splashscreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

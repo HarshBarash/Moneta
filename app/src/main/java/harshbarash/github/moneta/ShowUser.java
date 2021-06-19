@@ -38,13 +38,13 @@ public class ShowUser extends AppCompatActivity {
     TextView nametv,professiontv,biotv,emailtv,websitetv,requesttv;
     ImageView imageView;
     FirebaseDatabase database;
-    DatabaseReference databaseReference,databaseReference1,databaseReference2,postnoref,db1,db2;
+    DatabaseReference databaseReference,databaseReference1,databaseReference2, databaseReference3, postnoref,db1,db2;
     TextView button,followers_tv,posts_tv;
     CardView followers_cv,posts_cd;
     String url,name,age,email,privacy,p,website,bio,userid;
     RequestMember requestMember;
     String name_result;
-    String uidreq,namereq,urlreq,professionreq;
+    String uidreq,namereq,urlreq,bioreq;
     ImageButton back;
 
     Button sendmessage;
@@ -104,6 +104,7 @@ public class ShowUser extends AppCompatActivity {
         databaseReference1 = database.getReference("followers").child(userid);
         documentReference = db.collection("user").document(userid);
         postnoref = database.getReference("UserCoins").child(userid);
+        databaseReference3  = database.getReference("UserCoins");
         databaseReference2  = database.getReference("followers");
         documentReference1 = db.collection("user").document(currentUserId);
 
@@ -245,7 +246,7 @@ public class ShowUser extends AppCompatActivity {
 
                         if (task.getResult().exists()){
                             namereq = task.getResult().getString("name");
-                            professionreq = task.getResult().getString("age");
+                            bioreq = task.getResult().getString("bio");
                             urlreq = task.getResult().getString("url");
 
 
@@ -324,7 +325,7 @@ public class ShowUser extends AppCompatActivity {
         if (p.equals("Открытый аккаунт")){
             button.setText("Вы подписаны");
             requestMember.setUserid(currentUserId);
-            requestMember.setProfession(professionreq);
+            requestMember.setBio(bioreq);
             requestMember.setUrl(urlreq);
             requestMember.setName(namereq);
 
@@ -333,7 +334,7 @@ public class ShowUser extends AppCompatActivity {
 
             button.setText("Запрошенно");
             requestMember.setUserid(currentUserId);
-            requestMember.setProfession(professionreq);
+            requestMember.setBio(bioreq);
             requestMember.setUrl(urlreq);
             requestMember.setName(namereq);
             databaseReference.child(currentUserId).setValue(requestMember);

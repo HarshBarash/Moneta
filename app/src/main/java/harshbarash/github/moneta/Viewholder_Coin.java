@@ -141,7 +141,7 @@ public class Viewholder_Coin extends RecyclerView.ViewHolder {
         bio_result = itemView.findViewById(R.id.tv_city);
 
         nominal_result.setText(nominal);
-        bio_result.setText(bio);
+        bio_result.setText(name);
 
 
         switch (nominal) {
@@ -193,6 +193,7 @@ public class Viewholder_Coin extends RecyclerView.ViewHolder {
 
 
     }
+
 
 
     @SuppressLint("SetTextI18n")
@@ -251,17 +252,5 @@ public class Viewholder_Coin extends RecyclerView.ViewHolder {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -209,6 +209,20 @@ public class Provider extends ContentProvider {
             }
         }
 
+        if (values.containsKey(Moneta.CoinEntry.COLUMN_TYPE)) {
+            String type5 = values.getAsString(Moneta.CoinEntry.COLUMN_TYPE);
+            if (type5 == null || !Moneta.CoinEntry.isValidType5(type5)) {
+                throw new IllegalArgumentException("Выберите значение");
+            }
+        }
+
+        if (values.containsKey(Moneta.CoinEntry.COLUMN_MATERIAL)) {
+            String type6 = values.getAsString(Moneta.CoinEntry.COLUMN_MATERIAL);
+            if (type6 == null || !Moneta.CoinEntry.isValidType6(type6)) {
+                throw new IllegalArgumentException("Выберите значение");
+            }
+        }
+
 
         if (values.containsKey(Moneta.CoinEntry.COLUMN_YEAR)) {
             String year = values.getAsString(Moneta.CoinEntry.COLUMN_YEAR);

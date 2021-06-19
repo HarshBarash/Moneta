@@ -418,7 +418,7 @@
                         android:textColor="@color/black"
                         android:textSize="31sp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/infocondition"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
@@ -427,12 +427,16 @@
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
                         android:layout_marginStart="361dp"
-                        android:layout_marginTop="150dp"
-                        android:layout_marginEnd="171dp"
-                        android:layout_marginBottom="962dp"
-                        app:srcCompat="@drawable/info" />
+                        android:layout_marginTop="152dp"
+                        android:layout_marginEnd="172dp"
+                        android:layout_marginBottom="960dp"
+                        android:background="#00000000"
+                        android:maxWidth="25dp"
+                        android:maxHeight="25dp"
+                        android:src="@drawable/ic_info" />
 
-                    <ImageView
+
+                    <ImageButton
                         android:id="@+id/infostamp"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
@@ -440,14 +444,16 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="364dp"
-                        android:layout_marginTop="348dp"
-                        android:layout_marginEnd="168dp"
-                        android:layout_marginBottom="764dp"
-                        app:srcCompat="@drawable/info" />
+                        android:layout_marginStart="366dp"
+                        android:layout_marginTop="356dp"
+                        android:layout_marginEnd="166dp"
+                        android:layout_marginBottom="756dp"
+                        android:background="#00000000"
+                        android:maxWidth="25dp"
+                        android:maxHeight="25dp"
+                        android:src="@drawable/ic_info" />
 
-
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/infotype"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
@@ -459,9 +465,12 @@
                         android:layout_marginTop="465dp"
                         android:layout_marginEnd="172dp"
                         android:layout_marginBottom="647dp"
-                        app:srcCompat="@drawable/info" />
+                        android:background="#00000000"
+                        android:maxWidth="25dp"
+                        android:maxHeight="25dp"
+                        android:src="@drawable/ic_info" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/infomaterial"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
@@ -469,11 +478,14 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="357dp"
-                        android:layout_marginTop="577dp"
-                        android:layout_marginEnd="175dp"
-                        android:layout_marginBottom="535dp"
-                        app:srcCompat="@drawable/info" />
+                        android:layout_marginStart="364dp"
+                        android:layout_marginTop="583dp"
+                        android:layout_marginEnd="168dp"
+                        android:layout_marginBottom="529dp"
+                        android:background="#00000000"
+                        android:maxWidth="25dp"
+                        android:maxHeight="25dp"
+                        android:src="@drawable/ic_info" />
 
                 </RelativeLayout>
 
