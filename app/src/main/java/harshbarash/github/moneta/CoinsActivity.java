@@ -56,7 +56,8 @@ public class CoinsActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
+        //запрет скриншотов
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.fragment_search);
 
         back = findViewById(R.id.backspace);

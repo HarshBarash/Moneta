@@ -111,12 +111,20 @@ public class ShowUser extends AppCompatActivity {
         sendmessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String status = button.getText().toString();
+                if (p.equals("Закрытый аккаунт") && (status.equals("Подписаться") || status.equals("Запрошено"))){
+                    Toast.makeText(ShowUser.this, "Вас нет в подписчиках", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(ShowUser.this,MessageActivity.class);
-                intent.putExtra("n",name);
-                intent.putExtra("u",url);
-                intent.putExtra("uid",userid);
-                startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ShowUser.this,MessageActivity.class);
+                    intent.putExtra("n",name);
+                    intent.putExtra("u",url);
+                    intent.putExtra("uid",userid);
+                    startActivity(intent);
+
+                }
+
             }
         });
 
@@ -140,7 +148,7 @@ public class ShowUser extends AppCompatActivity {
                 String status = button.getText().toString();
                 if (status.equals("Подписаться")){
                     follow();
-                }else if (status.equals("Запрошенно")){
+                }else if (status.equals("Запрошено")){
                     delRequest();
                 }else if (status.equals("Вы подписаны")){
                     unFollow();
@@ -287,7 +295,7 @@ public class ShowUser extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.hasChild(currentUserId)){
-                    button.setText("Запрошенно");
+                    button.setText("Запрошено");
 
                 }
 
@@ -332,7 +340,7 @@ public class ShowUser extends AppCompatActivity {
             databaseReference1.child(currentUserId).setValue(requestMember);
         }else {
 
-            button.setText("Запрошенно");
+            button.setText("Запрошено");
             requestMember.setUserid(currentUserId);
             requestMember.setBio(bioreq);
             requestMember.setUrl(urlreq);

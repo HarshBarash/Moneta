@@ -8,6 +8,8 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,8 @@ public class CollectionActivity extends AppCompatActivity implements LoaderManag
 
     public Adapter mAdapter;
     public static final int COINLOADER = 0;
+    ImageButton back;
+
 
 
     @Override
@@ -32,6 +36,17 @@ public class CollectionActivity extends AppCompatActivity implements LoaderManag
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(CollectionActivity.this, DefineActivity.class);
             startActivity(intent);
+        });
+
+        back = findViewById(R.id.backspace);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+            }
+
         });
 
         ListView listView = findViewById(R.id.list);

@@ -2,6 +2,7 @@ package harshbarash.github.moneta;
 
 import android.app.Application;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,8 +19,9 @@ import harshbarash.github.monetaandroid.R;
 
 public class ProfileViewholder extends RecyclerView.ViewHolder {
 
-    TextView textViewName,textViewBio,viewUserprofile,sendmessagebtn;
-    TextView namell,vp_ll,namefollower,vpfollower,bioFollower;
+    TextView textViewName,textViewBio,viewUserprofile;
+    ImageButton sendmessagebtn, vpfollower;
+    TextView namell,vp_ll,namefollower,bioFollower;
 
     ImageView imageView,iv_ll,iv_follower;
     CardView cardView;

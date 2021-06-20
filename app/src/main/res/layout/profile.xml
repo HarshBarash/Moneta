@@ -39,7 +39,7 @@
                 android:textColor="@android:color/black"
                 android:hint="Имя"
                 android:layout_marginBottom="4dp"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:id="@+id/tv_name_profile" />
 
             <TextView

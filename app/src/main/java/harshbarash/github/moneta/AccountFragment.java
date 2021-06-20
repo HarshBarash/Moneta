@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -144,10 +145,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
                 int count = followerno;
 
-                Resources res = getContext().getResources();
-                String followersFound = res.getQuantityString(R.plurals.numberOfFollower, count, count);
-                followertv.setText(followerno + " " + followersFound); //конкатанирую речь в 3 ночи;)
+                try {
+                    Resources res = requireContext().getResources();
+                    String followersFound = res.getQuantityString(R.plurals.numberOfFollower, count, count);
+                    followertv.setText(followerno + " " + followersFound);
 
+
+                } catch (Exception e) {
+                    Toast.makeText(getContext(), "Что-то пошло не так", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
