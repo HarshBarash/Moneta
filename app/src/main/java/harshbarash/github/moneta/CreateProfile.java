@@ -173,9 +173,7 @@ public class CreateProfile extends AppCompatActivity {
 //                                        progressBar.setVisibility(View.INVISIBLE);
                                         Toast.makeText(CreateProfile.this, "Профиль создан", Toast.LENGTH_SHORT).show();
 
-                                        Handler handler = new Handler();
-                                        handler.postDelayed(() -> getSupportFragmentManager().beginTransaction().
-                                                add(R.layout.fragment_account, new AccountFragment()).commit(), 0);
+                                       finish();
                                     });
                         }
 
