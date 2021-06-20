@@ -20,26 +20,71 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="harshbarash.github.moneta.FollowerActivity" />
-        <activity android:name="harshbarash.github.moneta.UpdatePhoto" />
-        <activity android:name="harshbarash.github.moneta.SendImage" />
+        <activity
+            android:name="harshbarash.github.moneta.UpdatePhoto"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.SendImage"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity android:name="harshbarash.github.moneta.MessageActivity" />
-        <activity android:name="harshbarash.github.moneta.YourCoins" />
-        <activity android:name="harshbarash.github.moneta.Related" />
-        <activity android:name="harshbarash.github.moneta.RequestShow" />
-        <activity android:name="harshbarash.github.moneta.CoinsActivity" />
+        <activity
+            android:name="harshbarash.github.moneta.YourCoins"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="harshbarash.github.moneta.Related"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="harshbarash.github.moneta.RequestShow"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="harshbarash.github.moneta.CoinsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
         <activity android:name="harshbarash.github.moneta.ClassifierActivity"/>
         <activity android:name="harshbarash.github.moneta.CollectionActivity" />
-        <activity android:name="harshbarash.github.moneta.DefineActivity" />
-        <activity android:name="harshbarash.github.moneta.ImageActivity" />
-        <activity android:name="harshbarash.github.moneta.PrivacyActivity" />
-        <activity android:name="harshbarash.github.moneta.UpdateProfile" />
-        <activity android:name="harshbarash.github.moneta.CreateProfile" />
+        <activity
+            android:name="harshbarash.github.moneta.DefineActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name="harshbarash.github.moneta.ImageActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.PrivacyActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.UpdateProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="harshbarash.github.moneta.CreateProfile"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity android:name="harshbarash.github.moneta.MainActivity" />
-        <activity android:name="harshbarash.github.moneta.RegisterActivity" />
-        <activity android:name="harshbarash.github.moneta.ShowUser" />
-        <activity android:name="harshbarash.github.moneta.LoginActivity" />
-        <activity android:name="harshbarash.github.moneta.Splashscreen"
-            android:theme="@style/SplashTheme">
+        <activity
+            android:name="harshbarash.github.moneta.RegisterActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.ShowUser"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="harshbarash.github.moneta.Splashscreen"
+            android:theme="@style/SplashTheme"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

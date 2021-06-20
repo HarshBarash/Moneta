@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -48,6 +49,7 @@ public class UpdatePhoto extends AppCompatActivity {
     DocumentReference documentReference;
     String currentUserId;
     Button button;
+    ImageButton back;
     Uri imageUri;
     All_UserMember member;
     private  final static int  PICK_IMAGE = 1;
@@ -57,6 +59,17 @@ public class UpdatePhoto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_photo);
+
+        back = findViewById(R.id.backspace);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+            }
+
+        });
 
         member = new All_UserMember();
         imageView = findViewById(R.id.iv_updatephoto);
@@ -164,7 +177,7 @@ public class UpdatePhoto extends AppCompatActivity {
                                             Intent intent = new Intent(UpdatePhoto.this, AccountFragment.class);
                                             startActivity(intent);
                                         }
-                                    },200);
+                                    },100);
                                 }
                             });
                 }
