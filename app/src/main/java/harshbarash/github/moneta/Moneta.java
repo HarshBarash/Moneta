@@ -1,10 +1,5 @@
 package harshbarash.github.moneta;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
@@ -13,6 +8,8 @@ import android.provider.BaseColumns;
 public final class Moneta {
 
     public Moneta() { }
+
+
 
     public static final String CONTENT_AUTHORITY = "harshbarash.github.moneta";
     public static final Uri BASE_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
@@ -105,6 +102,7 @@ public final class Moneta {
             }
             return false;
         }
+
 
     }
 

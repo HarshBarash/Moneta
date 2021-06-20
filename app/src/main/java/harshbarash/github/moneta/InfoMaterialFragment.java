@@ -30,7 +30,6 @@ public class InfoMaterialFragment extends DialogFragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InfoMaterialFragment.this.requireContext(), DefineActivity.class);
                 dismiss();
             }
         });

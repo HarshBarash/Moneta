@@ -1,16 +1,19 @@
 package harshbarash.github.moneta;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,39 +23,29 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
-
-import android.app.AlertDialog;
-import android.content.ContentValues;
-import android.content.DialogInterface;
-import android.content.pm.ActivityInfo;
-import android.database.Cursor;
-import android.net.Uri;
-import android.view.MenuItem;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
 import android.content.Loader;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import harshbarash.github.monetaandroid.R;
 
+//раздел распознание
 public class DefineActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, LoaderManager.LoaderCallbacks<Cursor> {
-
 
     // firebase - NOSQL
     EditText fbYearEditText, fbPriceEditText, fbDescriptionEditText;
@@ -123,6 +116,8 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             mCurrentCoinUri = intent.getData();
         }
 
+
+
         define_image.setOnClickListener(v ->
                 startActivity(new Intent(DefineActivity.this, ClassifierActivity.class)));
 
@@ -162,6 +157,7 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             infoTypeFragment.show(getSupportFragmentManager(), "Info");
         });
 
+
         mSpinner1.setOnTouchListener(mOnTouchListener);
         mSpinner2.setOnTouchListener(mOnTouchListener);
         mSpinner3.setOnTouchListener(mOnTouchListener);
@@ -172,7 +168,6 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
         mPriceEditText.setOnTouchListener(mOnTouchListener);
         mDescriptionEditText.setOnTouchListener(mOnTouchListener);
 
-        setUpSpinner();
 
         if(mCurrentCoinUri != null){
             getLoaderManager().initLoader(COINLOADER, null, this);
@@ -223,304 +218,40 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner1_nominal);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner1.setAdapter(arrayAdapter);
+        mSpinner1.setAdapter(arrayAdapter);
         spinner1.setOnItemSelectedListener(this);
 
         ArrayAdapter arrayAdapter2 = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner2_condition);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner2.setAdapter(arrayAdapter2);
+        mSpinner2.setAdapter(arrayAdapter2);
         spinner2.setOnItemSelectedListener(this);
 
         ArrayAdapter arrayAdapter3 = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner3_magnet);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner3.setAdapter(arrayAdapter3);
+        mSpinner3.setAdapter(arrayAdapter3);
         spinner3.setOnItemSelectedListener(this);
 
         ArrayAdapter arrayAdapter4 = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner4_stamp);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner4.setAdapter(arrayAdapter4);
+        mSpinner4.setAdapter(arrayAdapter4);
         spinner4.setOnItemSelectedListener(this);
 
         ArrayAdapter arrayAdapter5 = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner5_type);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner5.setAdapter(arrayAdapter5);
+        mSpinner5.setAdapter(arrayAdapter5);
         spinner5.setOnItemSelectedListener(this);
 
         ArrayAdapter arrayAdapter6 = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, spiner6_material);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner6.setAdapter(arrayAdapter6);
+        mSpinner6.setAdapter(arrayAdapter6);
         spinner6.setOnItemSelectedListener(this);
 
-        //
 
-        addfbBtn.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View view) {
-
-                //все значения в fb
-
-                String nominal = spinner1.getSelectedItem().toString();
-                String condition = spinner2.getSelectedItem().toString();
-                String magnet = spinner3.getSelectedItem().toString();
-                String stamp = spinner4.getSelectedItem().toString();
-                String type = spinner5.getSelectedItem().toString();
-                String material = spinner6.getSelectedItem().toString();
-                String year = fbYearEditText.getText().toString();
-                String price = fbPriceEditText.getText().toString();
-                String description = fbDescriptionEditText.getText().toString();
-
-                Calendar cdate = Calendar.getInstance();
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat currentdate = new SimpleDateFormat("dd-MMMM-yyyy");
-                final  String savedate = currentdate.format(cdate.getTime());
-
-
-                //Если надо до секунды
-                Calendar ctime = Calendar.getInstance();
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat currenttime = new SimpleDateFormat("HH:mm:ss");
-                final String savetime = currenttime.format(ctime.getTime());
-
-
-                String time = savedate +":"+ savetime;
-
-//                String time = savedate;
-
-
-
-                if (!TextUtils.isEmpty(nominal) && !TextUtils.isEmpty(condition) && !TextUtils.isEmpty(magnet)  && !TextUtils.isEmpty(stamp)  && !TextUtils.isEmpty(type) &&  !TextUtils.isEmpty(material)  && !TextUtils.isEmpty(year)  && !TextUtils.isEmpty(price)  && !TextUtils.isEmpty(description) ){
-
-
-                    member.setNominal(nominal);
-                    member.setCondition(condition);
-                    member.setMagnet(magnet);
-                    member.setStamp(stamp);
-                    member.setType(type);
-                    member.setMaterial(material);
-                    member.setYear(year);
-                    member.setPrice(price);
-                    member.setDescription(description);
-
-                    member.setName(name);
-                    member.setPrivacy(privacy);
-                    member.setUrl(url);
-                    member.setUserid(uid);
-                    member.setTime(time);
-
-                    String id = UserCoins.push().getKey();
-                    UserCoins.child(id).setValue(member);
-
-
-                    String child = AllCoins.push().getKey();
-                    member.setKey(id);
-                    AllCoins.child(child).setValue(member);
-                    Toast.makeText(DefineActivity.this, "Выставленно", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DefineActivity.this, CoinsActivity.class);
-                    startActivity(intent);
-
-                }else {
-
-                    Toast.makeText(DefineActivity.this, "Заполните оставшиеся поля", Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
-        });
-    }
-
-
-    // openHelper
-    private void initView() {
-        //OpenHelper
-        InfoCondition = findViewById(R.id.infocondition);
-        InfoStamp = findViewById(R.id.infostamp);
-        InfoMaterial = findViewById(R.id.infomaterial);
-        InfoType = findViewById(R.id.infotype);
-
-        define_image = findViewById(R.id.define_image);
-        addBtn = findViewById(R.id.addBtn);
-        removeBtn = findViewById(R.id.removeBtn);
-
-        mSpinner1 = findViewById(R.id.spinner);
-        mSpinner2 = findViewById(R.id.spinner2);
-        mSpinner3 = findViewById(R.id.spinner3);
-        mSpinner4 = findViewById(R.id.spinner4);
-        mSpinner5 = findViewById(R.id.spinner5);
-        mSpinner6 = findViewById(R.id.spinner6);
-
-        mYearEditText = findViewById(R.id.yearEt);
-        mPriceEditText = findViewById(R.id.priceEt);
-        mDescriptionEditText = findViewById(R.id.descriptionEt);
-    }
-
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        Toast.makeText(this, "Пожалуйста заполните все поля", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-
-        documentReference.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @SuppressLint("WrongConstant")
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.getResult().exists()) {
-                            name = task.getResult().getString("Имя");
-                            url = task.getResult().getString("url");
-                            privacy = task.getResult().getString("privacy");
-                            uid = task.getResult().getString("uid");
-
-
-                            if (spinner1.equals("10 Рублей")){
-                                spinner1.setSelection(3); //10
-                            }else if (spinner1.equals("2 Рубля")){
-                                spinner1.setSelection(1); //2
-                            } else if (spinner1.equals("5 Рублей")){
-                                spinner1.setSelection(2); //5
-                            } else {
-                                spinner1.setSelection(0); //1
-                            }
-
-
-                            if (spinner2.equals("1 - PR")){
-                                spinner2.setSelection(0); //1
-                            }else if (spinner2.equals("2 - G")){
-                                spinner2.setSelection(1); //2
-                            } else if (spinner2.equals("3 - VG")){
-                                spinner2.setSelection(2); //3
-                            } else if (spinner2.equals("4 - F")){
-                                spinner2.setSelection(3); //4
-                            } else if (spinner2.equals("7 - UNC")){
-                                spinner2.setSelection(6); //7
-                            } else if (spinner2.equals("6 - XF")){
-                                spinner2.setSelection(5); //6
-                            } else {
-                                spinner2.setSelection(4); //5
-                            }
-
-                            if (spinner3.equals("Да")){
-                                spinner3.setSelection(1); //Да
-                            } else {
-                                spinner3.setSelection(0); //Нет
-                            }
-
-                            if (spinner4.equals("ШТ.СП")){
-                                spinner4.setSelection(1); //ШТ.СП
-                            } else {
-                                spinner4.setSelection(0); //ШТ.М(А)
-                            }
-
-                            if (spinner5.equals("Инвестиционная")){
-                                spinner5.setSelection(2); //Инвестиционная
-                            } else if (spinner5.equals("Юбилейная")) {
-                                spinner5.setSelection(1); //Юбилейная
-                            } else {
-                                spinner5.setSelection(0); //В обращении
-                            }
-
-
-                            if (spinner6.equals("Другой")){
-                                spinner6.setSelection(2); //Белый
-                            } else if (spinner6.equals("Желтый Металл")) {
-                                spinner6.setSelection(1); //Желтый
-                            } else {
-                                spinner6.setSelection(0); //Белый
-                            }
-
-
-                        } else {
-//                            Toast.makeText(DefineActivity.this, "Что-то пошло не так", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
-
-
-    private void savefbCoin() {
-
-        final  String nominal = spinner1.getSelectedItem().toString();
-        final  String condition = spinner2.getSelectedItem().toString();
-        final  String magnet = spinner3.getSelectedItem().toString();
-        final  String stamp = spinner4.getSelectedItem().toString();
-        final  String type = spinner5.getSelectedItem().toString();
-        final  String material = spinner6.getSelectedItem().toString();
-        String year = fbYearEditText.getText().toString();
-        String price = fbPriceEditText.getText().toString();
-        String description = fbDescriptionEditText.getText().toString();
-
-
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String currentid = user.getUid();
-        final  DocumentReference sCoin = db.collection("User Coins").document(currentid);
-        db.runTransaction(new Transaction.Function<Void>() {
-            @Override
-            public Void apply(Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(sCoin);
-
-
-                transaction.update(sCoin, "Номинал", nominal );
-                transaction.update(sCoin, "Состояние", condition );
-                transaction.update(sCoin, "Магнит", magnet );
-                transaction.update(sCoin, "Штамп", stamp );
-                transaction.update(sCoin, "Тип", type );
-                transaction.update(sCoin, "Материал", material );
-                transaction.update(sCoin, "Год", year );
-                transaction.update(sCoin, "Цена", price );
-                transaction.update(sCoin, "Описание", description );
-
-
-
-                // Success
-                return null;
-            }
-        }).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(DefineActivity.this, "Успешно добавленно", Toast.LENGTH_SHORT).show();
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(DefineActivity.this, "Что-то пошло не так", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-    }
-
-    private void setUpSpinner() {
-
-        ArrayAdapter spinner1 = ArrayAdapter.createFromResource(this, R.array.arrayspinner1, android.R.layout.simple_spinner_item);
-        spinner1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner1.setAdapter(spinner1);
-
-        ArrayAdapter spinner2 = ArrayAdapter.createFromResource(this, R.array.arrayspinner2, android.R.layout.simple_spinner_item);
-        spinner2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner2.setAdapter(spinner2);
-
-        ArrayAdapter spinner3 = ArrayAdapter.createFromResource(this, R.array.arrayspinner3, android.R.layout.simple_spinner_item);
-        spinner3.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner3.setAdapter(spinner3);
-
-        ArrayAdapter spinner4 = ArrayAdapter.createFromResource(this, R.array.arrayspinner4, android.R.layout.simple_spinner_item);
-        spinner4.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner4.setAdapter(spinner4);
-
-        ArrayAdapter spinner5 = ArrayAdapter.createFromResource(this, R.array.arrayspinner5, android.R.layout.simple_spinner_item);
-        spinner5.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner5.setAdapter(spinner5);
-
-        ArrayAdapter spinner6 = ArrayAdapter.createFromResource(this, R.array.arrayspinner6, android.R.layout.simple_spinner_item);
-        spinner6.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        mSpinner6.setAdapter(spinner6);
 
         mSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -658,7 +389,105 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
 
             }
         });
+
+        //
+
+        addfbBtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                //все значения в fb
+
+                String nominal = spinner1.getSelectedItem().toString();
+                String condition = spinner2.getSelectedItem().toString();
+                String magnet = spinner3.getSelectedItem().toString();
+                String stamp = spinner4.getSelectedItem().toString();
+                String type = spinner5.getSelectedItem().toString();
+                String material = spinner6.getSelectedItem().toString();
+                String year = fbYearEditText.getText().toString();
+                String price = fbPriceEditText.getText().toString();
+                String description = fbDescriptionEditText.getText().toString();
+
+                Calendar cdate = Calendar.getInstance();
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat currentdate = new SimpleDateFormat("dd-MMMM-yyyy");
+                final  String savedate = currentdate.format(cdate.getTime());
+
+
+                //Если надо до секунды
+//                Calendar ctime = Calendar.getInstance();
+//                @SuppressLint("SimpleDateFormat") SimpleDateFormat currenttime = new SimpleDateFormat("HH:mm:ss");
+//                final String savetime = currenttime.format(ctime.getTime());
+
+
+//                String time = savedate +":"+ savetime;
+
+                String time = savedate;
+
+
+
+                if (!TextUtils.isEmpty(nominal) && !TextUtils.isEmpty(condition) && !TextUtils.isEmpty(magnet)  && !TextUtils.isEmpty(stamp)  && !TextUtils.isEmpty(type) &&  !TextUtils.isEmpty(material)  && !TextUtils.isEmpty(year)  && !TextUtils.isEmpty(price)  && !TextUtils.isEmpty(description) ){
+
+
+                    member.setNominal(nominal);
+                    member.setCondition(condition);
+                    member.setMagnet(magnet);
+                    member.setStamp(stamp);
+                    member.setType(type);
+                    member.setMaterial(material);
+                    member.setYear(year);
+                    member.setPrice(price);
+                    member.setDescription(description);
+
+                    member.setName(name);
+                    member.setPrivacy(privacy);
+                    member.setUrl(url);
+                    member.setUserid(uid);
+                    member.setTime(time);
+
+                    String id = UserCoins.push().getKey();
+                    UserCoins.child(id).setValue(member);
+
+
+                    String child = AllCoins.push().getKey();
+                    member.setKey(id);
+                    AllCoins.child(child).setValue(member);
+                    Toast.makeText(DefineActivity.this, "Выставленно", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(DefineActivity.this, CoinsActivity.class);
+                    startActivity(intent);
+
+                }else {
+
+                    Toast.makeText(DefineActivity.this, "Заполните оставшиеся поля", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
     }
+
+    private void initView() {
+        InfoCondition = findViewById(R.id.infocondition);
+        InfoStamp = findViewById(R.id.infostamp);
+        InfoMaterial = findViewById(R.id.infomaterial);
+        InfoType = findViewById(R.id.infotype);
+
+        define_image = findViewById(R.id.define_image);
+        addBtn = findViewById(R.id.addBtn);
+        removeBtn = findViewById(R.id.removeBtn);
+
+        mSpinner1 = findViewById(R.id.spinner);
+        mSpinner2 = findViewById(R.id.spinner2);
+        mSpinner3 = findViewById(R.id.spinner3);
+        mSpinner4 = findViewById(R.id.spinner4);
+        mSpinner5 = findViewById(R.id.spinner5);
+        mSpinner6 = findViewById(R.id.spinner6);
+
+        mYearEditText = findViewById(R.id.yearEt);
+        mPriceEditText = findViewById(R.id.priceEt);
+        mDescriptionEditText = findViewById(R.id.descriptionEt);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -726,8 +555,8 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
                 && mType1 == Moneta.CoinEntry.TYPEOFNOMINAL_1RUBEL &&
                 mType2 == Moneta.CoinEntry.TYPEOFCONDITION_5 &&
                 mType3 == Moneta.CoinEntry.TYPEOFMAGNET_NET &&
-                mType4 == Moneta.CoinEntry.TYPEOFSTAMP_M && mType5 == Moneta.CoinEntry.TYPEOFTYPE_OB
-                && mType6 == Moneta.CoinEntry.TYPEOFMATERIAL_WHITE) {
+                mType4 == Moneta.CoinEntry.TYPEOFSTAMP_M
+                && mType5 == Moneta.CoinEntry.TYPEOFTYPE_OB && mType6 == Moneta.CoinEntry.TYPEOFMATERIAL_WHITE) {
 
             hashAllRequiredValues = true;
             return hashAllRequiredValues;
@@ -808,7 +637,6 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
 
-
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 
@@ -821,8 +649,8 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             int condition = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_CONDITION);
             int magnet = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MAGNET);
             int stamp = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_STAMP);
-            int type = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_TYPE);
-            int material = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MATERIAL);
+            int kant = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_TYPE);
+            int gurt = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_MATERIAL);
             int year = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_YEAR);
             int price = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_PRICE);
             int description = cursor.getColumnIndex(Moneta.CoinEntry.COLUMN_DESCRIPTION);
@@ -832,8 +660,8 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             String condition_tos = cursor.getString(condition);
             String magnet_tos = cursor.getString(magnet);
             String stamp_tos = cursor.getString(stamp);
-            String type_tos = cursor.getString(type);
-            String material_tos = cursor.getString(material);
+            String kant_tos = cursor.getString(kant);
+            String gurt_tos = cursor.getString(gurt);
             String year_tos = cursor.getString(year);
             String price_tos = cursor.getString(price);
             String description_tos = cursor.getString(description);
@@ -842,8 +670,6 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
             mYearEditText.setText(year_tos);
             mPriceEditText.setText(price_tos);
             mDescriptionEditText.setText(description_tos);
-            mSpinner1.setSelection(nominal);
-            mSpinner2.setSelection(condition);
 
 
 
@@ -920,7 +746,7 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
                     mSpinner4.setSelection(0);
             }
 
-            switch (type_tos) {
+            switch (kant_tos) {
                 case Moneta.CoinEntry.TYPEOFTYPE_OB:
                     mSpinner5.setSelection(0);
                     break;
@@ -937,7 +763,7 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
                     mSpinner5.setSelection(0);
             }
 
-            switch (material_tos) {
+            switch (gurt_tos) {
                 case Moneta.CoinEntry.TYPEOFMATERIAL_WHITE:
                     mSpinner6.setSelection(0);
                     break;
@@ -947,7 +773,7 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
                     break;
 
                 case Moneta.CoinEntry.TYPEOFMATERIAL_OTHER:
-                    mSpinner6.setSelection(1);
+                    mSpinner6.setSelection(3);
                     break;
 
                 default:
@@ -1041,10 +867,15 @@ public class DefineActivity extends AppCompatActivity implements AdapterView.OnI
                 };
 
         showUnsavedChangesDialog(discardButtonClickListener);
+    }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
-
-

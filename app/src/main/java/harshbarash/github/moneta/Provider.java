@@ -101,11 +101,6 @@ public class Provider extends ContentProvider {
             throw new IllegalArgumentException("Выберите значение");
         }
 
-        String type6 = values.getAsString(Moneta.CoinEntry.COLUMN_MATERIAL);
-        if (type6 == null || !Moneta.CoinEntry.isValidType6(type6)) {
-            throw new IllegalArgumentException("Выберите значение");
-        }
-
         String year = values.getAsString(Moneta.CoinEntry.COLUMN_YEAR);
         if (year == null) {
             throw new IllegalArgumentException("Введите год");
@@ -210,15 +205,8 @@ public class Provider extends ContentProvider {
         }
 
         if (values.containsKey(Moneta.CoinEntry.COLUMN_TYPE)) {
-            String type5 = values.getAsString(Moneta.CoinEntry.COLUMN_TYPE);
-            if (type5 == null || !Moneta.CoinEntry.isValidType5(type5)) {
-                throw new IllegalArgumentException("Выберите значение");
-            }
-        }
-
-        if (values.containsKey(Moneta.CoinEntry.COLUMN_MATERIAL)) {
-            String type6 = values.getAsString(Moneta.CoinEntry.COLUMN_MATERIAL);
-            if (type6 == null || !Moneta.CoinEntry.isValidType6(type6)) {
+            String type4 = values.getAsString(Moneta.CoinEntry.COLUMN_STAMP);
+            if (type4 == null || !Moneta.CoinEntry.isValidType4(type4)) {
                 throw new IllegalArgumentException("Выберите значение");
             }
         }

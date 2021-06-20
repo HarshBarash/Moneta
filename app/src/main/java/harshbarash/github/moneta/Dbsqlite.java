@@ -12,8 +12,8 @@ import harshbarash.github.moneta.Moneta.CoinEntry;
 //класс - работа с БД
 public class Dbsqlite extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "moneta.db";
-    public static final int DATABASE_VERSION = 9;
+    public static final String DATABASE_NAME = "localmoneta.db";
+    public static final int DATABASE_VERSION = 1;
 
     public Dbsqlite(Context context){
 
@@ -41,11 +41,7 @@ public class Dbsqlite extends SQLiteOpenHelper {
 
     //обновление базы данных (Был фикс проблемы)
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion > oldVersion) {
-            db.execSQL(" ALTER TABLE mycoins ADD COLUMN TEXT");
-        }
-    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
     //открыть бд
     public void openDb(){
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -58,19 +54,18 @@ public class Dbsqlite extends SQLiteOpenHelper {
     }
 
     //вставить в бд
-    public Boolean insert_data(String nominal, String condition, String is_magnet, String stamp, String type,  String material, String price,  String year, String description){
+    public Boolean insert_data(String nominal, String condition, String description, String type, String is_magnet, String material, String price, String stamp, String year){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(CoinEntry.COLUMN_NOMINAL, nominal);
         contentValues.put(CoinEntry.COLUMN_CONDITION, condition);
-        contentValues.put(CoinEntry.COLUMN_MAGNET, is_magnet);
-        contentValues.put(CoinEntry.COLUMN_STAMP, stamp);
+        contentValues.put(CoinEntry.COLUMN_DESCRIPTION, description);
         contentValues.put(CoinEntry.COLUMN_TYPE, type);
+        contentValues.put(CoinEntry.COLUMN_MAGNET, is_magnet);
         contentValues.put(CoinEntry.COLUMN_MATERIAL, material);
         contentValues.put(CoinEntry.COLUMN_PRICE, price);
+        contentValues.put(CoinEntry.COLUMN_STAMP, stamp);
         contentValues.put(CoinEntry.COLUMN_YEAR, year);
-        contentValues.put(CoinEntry.COLUMN_DESCRIPTION, description);
-
         long result = DB.insert(CoinEntry.TABLE_NAME, null, contentValues);
         if (result < 0){
             return false;
@@ -81,7 +76,7 @@ public class Dbsqlite extends SQLiteOpenHelper {
     }
 
     //обновить бд
-    public Boolean update_data(String id, String nominal, String condition, String description, String type, String is_magnet, String material, String price, String stamp, String year){ //думаю можно отредактировать
+    public Boolean update_data(String id, String nominal, String condition, String description, String type, String is_magnet, String material, String price, String stamp, String year){ //думаю можно отредактировать, но хер его знает
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(CoinEntry.COLUMN_NOMINAL, nominal);

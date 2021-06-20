@@ -8,8 +8,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +21,6 @@ public class CollectionActivity extends AppCompatActivity implements LoaderManag
 
     public Adapter mAdapter;
     public static final int COINLOADER = 0;
-    ImageButton back;
 
 
     @Override
@@ -37,33 +34,20 @@ public class CollectionActivity extends AppCompatActivity implements LoaderManag
             startActivity(intent);
         });
 
-
-        back = findViewById(R.id.backspace);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                finish();
-            }
-
-        });
-
-
         ListView listView = findViewById(R.id.list);
         mAdapter = new Adapter(this, null);
         listView.setAdapter(mAdapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-        Intent intent = new Intent(CollectionActivity.this, DefineActivity.class);
+            Intent intent = new Intent(CollectionActivity.this, DefineActivity.class);
             Uri newUri = ContentUris.withAppendedId(Moneta.CoinEntry.CONTENT_URI, id);
             intent.setData(newUri);
             startActivity(intent);
-    });
+        });
 
         getLoaderManager().initLoader(COINLOADER, null, this);
 
-}
+    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
