@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="@drawable/background_users"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageStub"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/rubel5"
+        android:layout_margin="8dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textNominal"
+        android:layout_toRightOf="@+id/imageStub"
+        tools:text="5 рублей"
+        android:fontFamily="@font/playfair_display_bold"
+        android:textSize="18sp"
+        android:textColor="#212121"
+        android:layout_marginTop="9dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textYear"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/textNominal"
+        android:layout_toRightOf="@+id/imageStub"
+        tools:text="Год: 2000"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textNominal"
+        android:layout_marginTop="2.5dp"
+        android:layout_toRightOf="@+id/textYear"
+        tools:text="состоние: 7"
+        android:textColor="@color/MoneyGreen"
+        android:textStyle="italic"
+        android:id="@+id/textCondition"
+        android:textSize="14sp"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPrice"
+        android:layout_below="@+id/textYear"
+        android:layout_toRightOf="@+id/imageStub"
+        tools:text="цена: 5000"
+        android:textColor="@color/MoneyGreen"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_marginTop="2dp"/>
+
+
+
+</RelativeLayout>

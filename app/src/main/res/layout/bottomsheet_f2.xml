@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/MoneyGreen"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/related_f2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Избранное"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_bookmarks_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:id="@+id/your_coin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Мои лоты"
+            android:textSize="20sp"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/ic_baseline_restore_24"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

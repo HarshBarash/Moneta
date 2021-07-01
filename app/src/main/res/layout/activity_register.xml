@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/MoneyGreen"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Регистрация"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/textcolorgrey"
+            android:textSize="50sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="top|center_horizontal"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Электронная почта"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="top|center_horizontal"
+            android:textColor="@color/textcolorgrey"
+            android:drawableStart="@drawable/custom_email_input"
+            android:drawablePadding="10dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/grey"
+            android:id="@+id/register_email_et"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/custom_email_input"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Пароль"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="top|center_horizontal"
+            android:drawableStart="@drawable/custom_pass_input"
+            android:drawablePadding="10dp"
+            android:textColor="@color/textcolorgrey"
+            android:inputType="textPassword"
+            android:textColorHint="@color/grey"
+            android:id="@+id/register_password_et"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/custom_email_input"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Подтвердить пароль"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="top|center_horizontal"
+            android:drawableStart="@drawable/custom_pass_input"
+            android:drawablePadding="10dp"
+            android:textColor="@color/textcolorgrey"
+            android:inputType="textPassword"
+            android:textColorHint="@color/grey"
+            android:id="@+id/register_confirmpassword_et"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/custom_email_input"
+            android:paddingLeft="10dp" />
+
+
+        <CheckBox
+            android:id="@+id/register_checkbox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="330dp"
+            android:buttonTint="@color/textcolorgrey"
+            android:text="Показать пароль"
+            android:textColor="@color/textcolorgrey" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_moneygreen"
+            android:textColor="@color/white"
+            android:text="Вход"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="top|center_horizontal"
+            android:id="@+id/signup_to_login"
+            android:textSize="25sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_moneygreen"
+            android:textColor="@android:color/white"
+            android:text="Регистрация"
+            android:layout_marginTop="390dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="top|center_horizontal"
+            android:id="@+id/button_register"
+            android:textSize="25sp"/>
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressbar_register"
+            android:indeterminate="true"
+            android:indeterminateTint="@android:color/white"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:visibility="invisible"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="bottom|center_horizontal" />
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
+
+

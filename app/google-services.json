@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "199945301887",
+    "firebase_url": "https://test-4cc26-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "test-4cc26",
+    "storage_bucket": "test-4cc26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199945301887:android:bace24e361709bc9d1344a",
+        "android_client_info": {
+          "package_name": "harshbarash.github.monetar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199945301887-rs7pa31i8claffssh9q91upuesia3ugm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7aN01c9VVrdQvrwpsADEaTAoOuiTCw70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199945301887-rs7pa31i8claffssh9q91upuesia3ugm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199945301887:android:79e0f63871f52dd1d1344a",
+        "android_client_info": {
+          "package_name": "harshbarash.github.monetaru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199945301887-58hgp0ismhat4r29cqha1rfs7s4r4gjg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "harshbarash.github.monetaru",
+            "certificate_hash": "6277e0bc8b5209c135c8528577a2ad7c20cd26ca"
+          }
+        },
+        {
+          "client_id": "199945301887-rs7pa31i8claffssh9q91upuesia3ugm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7aN01c9VVrdQvrwpsADEaTAoOuiTCw70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199945301887-rs7pa31i8claffssh9q91upuesia3ugm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

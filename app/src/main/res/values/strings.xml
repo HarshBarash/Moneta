@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">Монета</string>
+
+    <plurals name="numberOfFollowers">
+        <item quantity="zero">%d = zero</item>
+        <item quantity="one">%d = one</item>
+        <item quantity="two">%d = two</item>
+        <item quantity="few">%d = few</item>
+        <item quantity="many">%d = many</item>
+        <item quantity="other">%d = other</item>
+    </plurals>
+
+
+    <!-- А этот код мы используем для проверки того, как выглядит реальное склонение -->
+    <plurals name="numberOfFollower">
+        <item quantity="zero">нет подписчиков</item>
+        <item quantity="one"> подписчик</item>
+        <item quantity="two"> подписчика</item>
+        <item quantity="few"> подписчика</item>
+        <item quantity="many"> подписчиков</item>
+        <item quantity="other"> подписчиков</item>
+    </plurals>
+
+
+
+    <string name="title_search">Поиск</string>
+    <string name="logo">logo</string>
+    <string name="search_button">search button</string>
+    <string name="define_button">define button</string>
+    <string name="collection_button">collection button</string>
+    <string name="ml">*ML еще не совершенен, рекомендуем сверять данные</string>
+    <string name="Rubel_5">5 рублей</string>
+    <string name="remove">Убрать</string>
+    <string name="save">Сохранить</string>
+    <string name="add">добавить в коллекцию</string>
+    <string name="nominal">Номинал:</string>
+    <string name="R5">5 рублей</string>
+    <string name="condition">Состояние:</string>
+    <string name="stamp">Штемпль:</string>
+    <string name="magnet">Магнитная:</string>
+    <string name="price">Примерная цена:</string>
+    <string name="year">Год:</string>
+    <string name="pricex2">Ваша цена:</string>
+
+    <!-- диалог окно-->
+
+    <string name="unsaved_changes_dialog_msg">Отменить изменения и выйти из редактирования?</string>
+    <string name="discard">Убрать</string>
+    <string name="keep_editing">Продолжить редактирование</string>
+    <string name="editor_delete_product_successful">Монета удалена</string>
+    <string name="editor_delete_product_failed">Ошибка при удалении</string>
+    <string name="delete_dialog_msg">Удалить эту монету?</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+
+
+    <string name="description_info">Информация</string>
+    <string name="device">Device:</string>
+    <string name="model">Model:</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="toggle_turn_on">NN:On</string>
+    <string name="toggle_turn_off">NN:Off</string>
+    <string name="toggle">Use NNAPI</string>
+    <string name="tflite">tflite</string>
+    <string name="nnapi">NNAPI</string>
+    <string name="threads">Threads:</string>
+    <string-array name="models">
+        <item>Quantized</item>
+        <item>Float</item>
+    </string-array>
+    <string-array name="devices">
+        <item>CPU</item>
+        <item>GPU</item>
+        <item>NNAPI</item>
+    </string-array>
+
+    <!--  Arays для spinneroв-->
+    <string name="__1Rubel">1 Рубль</string>
+    <string name="__2Rubel">2 Рубля</string>
+    <string name="__5Rubel">5 Рублей</string>
+    <string name="__10Rubel">10 Рублей</string>
+    <string name="__1">1 - PR</string>
+    <string name="__2">2 - G</string>
+    <string name="__3">3 - VG</string>
+    <string name="__4">4 - F</string>
+    <string name="__5">5 - VF</string>
+    <string name="__6">6 - XF</string>
+    <string name="__7">7 - UNC</string>
+    <string name="__DA">Да</string>
+    <string name="__NET">Нет</string>
+    <string name="__M">ШТ.М(А)</string>
+    <string name="__SPB">ШТ.СП</string>
+    <string name="__OB">В обращении</string>
+    <string name="__YB">Юбилейная</string>
+    <string name="__IN">Инвестиционная</string>
+    <string name="__WHITE">Белый металл</string>
+    <string name="__YELLOW">Желтый металл</string>
+    <string name="__OTHER">Другой</string>
+    <string name="__KA">Не знаю</string>
+
+    <string name="_500">500 рублей</string>
+    <string name="username">Имя пользователя</string>
+    <string name="description">Дополнительно:</string>
+    <string name="_2003">2003</string>
+    <string name="app">Монета</string>
+    <string name="descmoneta">Пожалуйста поставьте \" - \" , если нет никаких дополнений </string>
+    <string name="conditionUP">Состояние</string>
+    <string name="material">Материал:</string>
+    <string name="type">Тип:</string>
+    <string name="auction">На аукцион</string>
+    <string name="mldesc">Распознование монет с помощью ML</string>
+    <string name="tododesccollection">Добавление в коллекцию</string>
+    <string name="backcollection">TODO</string>
+    <string name="security">Добавьте свое фото, для защиты от мошенников</string>
+    <string name="createprofile">Создать</string>
+    <string name="cityprofile">Город</string>
+    <string name="Profilecreate">Ваш профиль:</string>
+    <string name="yeelowmetall">Желтый металл</string>
+    <string name="mycoinmaterial">Материал:</string>
+    <string name="norequest">Отклонить</string>
+    <string name="yesrequest">Принять</string>
+    <string name="namerequest">Имя</string>
+
+
+</resources>

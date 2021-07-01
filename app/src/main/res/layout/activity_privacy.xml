@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/MoneyGreen"
+    tools:context=".PrivacyActivity">
+
+    <LinearLayout
+        android:background="@color/MoneyGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/backspace"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="190dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="50dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Настройки приватности:"
+        android:textSize="25sp"
+        android:gravity="center|top"
+        android:textColor="@android:color/black"
+        android:paddingTop="20dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Значение сейчас:"
+            android:textSize="30sp"
+            android:gravity="center|top"
+            android:textColor="@color/textcolorgrey"
+            android:paddingTop="80dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Открытый аккаунт"
+        android:textSize="30sp"
+        android:layout_marginTop="120dp"
+        android:gravity="center|top"
+        android:id="@+id/tv_status"
+        android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Обновить значение:"
+            android:textSize="30sp"
+            android:gravity="center|top"
+            android:textColor="@color/textcolorgrey"
+            android:paddingTop="180dp" />
+
+
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="230dp"
+            android:gravity="center|top"
+            android:padding="5dp"
+            android:backgroundTint="@color/MoneyGreen"
+            />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:id="@+id/btn_privacy"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_moneygreen"
+        android:layout_marginTop="275dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="center|top" />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
